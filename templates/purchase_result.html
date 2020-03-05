@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AgroPals-Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: lightgreen;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="http://localhost:5000/">
+            AgroPals
+        </a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/about">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/sos">
+                            Emergency
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/purchase">
+                            Purchase
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <h2 style="margin-top: 10px;">
+        <center>
+            HackBout
+        </center>
+    </h2>
+    <center>
+        <img src="{{url_for('static', filename='ladybird.jpg')}}" height="55%" width="55%" style="margin-top: 20px;">
+    </center>
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 offset-2 float-md-center">
+        <div class="jumbotron" style="width: 100%; margin-top: 30px;background-color: white;">
+            <h3><center>Nearby Chemical Shops</center></h3>
+            <table class = "table table-dark" border="1" style="width: 750px;">
+                   <thead>
+                   {% for i in b %}
+                      <tr>
+                         <th> {{ i[0] }} </th>
+                         <td> {{ i[1] }} </td>
+                         <td> {{ i[2] }} </td>
+                      </tr>
+                   {% endfor %}
+                   </thead>
+                </table>
+        </div>
+    </div>
+    </body>
+</html>
